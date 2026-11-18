@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hasil Belajar | Muhammad Al Gifari</title>
+  <meta name="description"
+    content="Kumpulan visualisasi dan dashboard Tableau hasil eksplorasi data oleh Muhammad Al Gifari.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Instrument+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0F2744;
+      --navy-soft: #1D3C66;
+      --white: #FFFFFF;
+      --mist: #F2F4F7;
+      --line: #DDE2E9;
+      --ink: #1B2433;
+      --muted: #5B6678;
+      --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+      --sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--mist);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--navy-soft);
+      outline-offset: 3px;
+      border-radius: 4px
+    }
+
+    .wrap {
+      width: min(1080px, 100% - 2.5rem);
+      margin-inline: auto
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10
+    }
+
+    header .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 64px;
+      gap: 1rem
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--navy);
+      text-decoration: none
+    }
+
+    .back {
+      font-size: .95rem;
+      color: var(--muted);
+      text-decoration: none
+    }
+
+    .back:hover {
+      color: var(--navy)
+    }
+
+    .intro {
+      padding: clamp(3rem, 7vw, 5rem) 0 2rem
+    }
+
+    h1 {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      font-weight: 600
+    }
+
+    .intro p {
+      color: var(--muted);
+      max-width: 36em;
+      margin: 0
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem 0 5rem
+    }
+
+    .viz {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .2s, transform .2s
+    }
+
+    .viz:hover {
+      box-shadow: 0 12px 28px rgba(15, 39, 68, .10);
+      transform: translateY(-2px)
+    }
+
+    .viz a.thumb {
+      display: block;
+      aspect-ratio: 16 / 10;
+      background: var(--mist);
+      overflow: hidden;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .viz img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top
+    }
+
+    .viz .info {
+      padding: 1.1rem 1.25rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      flex: 1
+    }
+
+    .viz h2 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin: 0;
+      line-height: 1.3
+    }
+
+    .viz .meta {
+      font-size: .85rem;
+      color: var(--muted);
+      margin: 0
+    }
+
+    .viz p {
+      font-size: .95rem;
+      color: var(--muted);
+      margin: 0
+    }
+
+    .viz .view {
+      margin-top: auto;
+      padding-top: .6rem;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none
+    }
+
+    .viz .view:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: var(--white);
+      padding: 1.5rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    @media (max-width:560px) {
+      .gallery {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="index.html">Portofolio</a>
+      <a class="back" href="index.html#proyek">&larr; Kembali ke proyek</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="intro">
+      <h1>Hasil Belajar</h1>
+      <p>Kumpulan visualisasi dan dashboard Tableau dari eksplorasi dataset Kaggle. Klik gambar untuk melihat ukuran
+        penuh.</p>
+    </div>
+
+    <!-- Untuk setiap visualisasi: simpan screenshot di folder "visualisasi" dan ganti src, judul, serta deskripsi -->
+    <div class="gallery">
+
+      <article class="viz">
+        <a class="thumb" href="telco_churn.png" target="_blank" rel="noopener">
+          <img src="telco_churn.png" alt="Dashboard Tableau pertama">
+        </a>
+        <div class="info">
+          <h2>Telco Customer Churn</h2>
+          <p class="meta">Tableau</p>
+          <p>Visualisasi ini adalah Telco Customer Churn Risk Dashboard yang menganalisis risiko berhentinya pelanggan
+            (churn) pada perusahaan telekomunikasi dari total 7.043 pelanggan.</p>
+          <a class="view" href="telco_churn.png" target="_blank" rel="noopener">Lihat ukuran penuh</a>
+        </div>
+      </article>
+
+      <article class="viz">
+        <a class="thumb" href="superstore.png" target="_blank" rel="noopener">
+          <img src="superstore.png" alt="Dashboard Tableau kedua">
+        </a>
+        <div class="info">
+          <h2>Superstore Sales</h2>
+          <p class="meta">Tableau</p>
+          <p>Visualisasi ini adalah Dashboard Superstore Sales yang menampilkan kinerja penjualan ritel selama periode
+            2015 hingga 2018 berdasarkan segmen pelanggan, sub-kategori produk, wilayah geografis di Amerika Serikat,
+            dan tren bulanan.</p>
+          <a class="view" href="superstore.png" target="_blank" rel="noopener">Lihat ukuran penuh</a>
+        </div>
+      </article>
+
+      <article class="viz">
+        <a class="thumb" href="visualisasi/tableau-3.png" target="_blank" rel="noopener">
+          <img src="visualisasi/tableau-3.png" alt="Dashboard Tableau ketiga">
+        </a>
+        <div class="info">
+          <h2>Judul dashboard ketiga</h2>
+          <p class="meta">Tableau</p>
+          <p>Ringkasan singkat apa yang ditunjukkan visualisasi ini dan temuan utamanya.</p>
+          <a class="view" href="visualisasi/tableau-3.png" target="_blank" rel="noopener">Lihat ukuran penuh</a>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Muhammad Al Gifari. Seluruh hak cipta dilindungi.</div>
+  </footer>
+
+</body>
+
+</html>
